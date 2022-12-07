@@ -12,7 +12,7 @@ const changeColor = function () {
   bodyEl.style.backgroundColor = getRandomHexColor();
   spanEl.textContent = getRandomHexColor();
 }
-btnEl.style.ba
+
 
 
 btnEl.addEventListener("click", changeColor);

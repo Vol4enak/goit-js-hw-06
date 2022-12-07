@@ -17,7 +17,7 @@ const images = [
 const galleryEl = document.querySelector(".gallery");
 
 
-const zxv = function (value) {
+const createTurget = function (value) {
   const addEl = document.createElement("li");
   addEl.classList.add("item");
   addEl.insertAdjacentHTML("afterbegin", "<img class=img__item>");
@@ -27,6 +27,6 @@ const zxv = function (value) {
 }
 
 
-galleryEl.append(...images.map(zxv));
+galleryEl.append(...images.map(createTurget));
 
 

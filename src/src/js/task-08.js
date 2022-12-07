@@ -4,10 +4,10 @@ const message = "All fields are required but closed!!!";
 const getInfoAboutClient = function (event) {
   const infoData = {};
   const evEl = event.currentTarget.elements;
- 
-  infoData.Email = evEl.email.value;
-  infoData.Password = evEl.password.value;
-console.log(infoData);
+
+  infoData[form.firstElementChild.textContent.trim()] = evEl.email.value;
+  infoData[form.children[1].textContent.trim()] = evEl.password.value;
+  console.log(infoData);
 };
 
 const handelSubmin = function (event) {

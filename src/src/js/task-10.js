@@ -8,36 +8,33 @@ const blockEl = document.querySelector("#boxes");
 const inputEl = document.querySelector("input");
 const pixel = "px"
 
-
-
 blockEl.style.display = "flex"
 blockEl.style.gap = "10px";
 
+const num = {
 
-const watchNum = function (event) {
-  const numOfInput = Number(event.currentTarget.value);
-  createDiv(numOfInput);
-};
+  getValue(number) {
+    this.amount = number.currentTarget.value;
+    return num.amount;
+  }
+}
 
-const createDiv = function (num) {
+function createBoxes() {
   let element = [];
   let widthNum = 20;
   let heighthNum = 20;
 
-  for (let i = 0; i < num; i++) {
+  for (let i = 0; i < num.amount; i++) {
     element.push(document.createElement("div"));
     element[i].classList.add("item");
     element[i].style.backgroundColor = getRandomHexColor();
     element[i].style.width = (widthNum += 10) + pixel;
     element[i].style.height = (heighthNum += 10) + pixel;
   }
-  console.log(element);
+
   return blockEl.append(...element);
 };
 
-const destroyDiv = function (dibEl) {
-  blockEl.innerHTML = "";
-};
-inputEl.addEventListener("blur", watchNum);
-btnCreateEl.addEventListener("click", createDiv);
-btnDestroyEl.addEventListener("click", destroyDiv);
+inputEl.addEventListener("input", num.getValue.bind(num));
+btnCreateEl.addEventListener("click", createBoxes);
+btnDestroyEl.addEventListener("click", () => (blockEl.innerHTML = ""));
