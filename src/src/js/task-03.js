@@ -26,9 +26,7 @@ const zxv = function (value) {
   return addEl;
 }
 
-const createItems = images.map(zxv);
 
-
-galleryEl.append(...createItems);
+galleryEl.append(...images.map(zxv));
 
 
