@@ -23,6 +23,7 @@ const createTurget = function (value) {
   addEl.insertAdjacentHTML("afterbegin", "<img class=img__item>");
   addEl.firstElementChild.setAttribute("alt", value.alt);
   addEl.firstElementChild.setAttribute("src", value.url);
+  console.log(addEl);
   return addEl;
 }
 
