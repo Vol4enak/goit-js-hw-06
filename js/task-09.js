@@ -8,9 +8,10 @@ const spanEl = document.querySelector(".color");
 
 
 const changeColor = function () {
+  const randColor = getRandomHexColor(); 
   const bodyEl = document.querySelector("body")
-  bodyEl.style.backgroundColor = getRandomHexColor();
-  spanEl.textContent = getRandomHexColor();
+  bodyEl.style.backgroundColor = randColor;
+  spanEl.textContent = randColor;
 }
 
 
