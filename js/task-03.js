@@ -17,17 +17,17 @@ const images = [
 const galleryEl = document.querySelector(".gallery");
 
 
-const createTurget = function (value) {
-  const addEl = document.createElement("li");
-  addEl.classList.add("item");
-  addEl.insertAdjacentHTML("afterbegin", "<img class=img__item>");
-  addEl.firstElementChild.setAttribute("alt", value.alt);
-  addEl.firstElementChild.setAttribute("src", value.url);
-  console.log(addEl);
-  return addEl;
-}
+const createTurget = images
+  .map(
+    (image) => `<li class="list-item">
+  <img class=img__item alt =${image.alt} src =${image.url} >
+  </li>`
+  )
+  .join("");
+console.log(createTurget);
 
 
-galleryEl.append(...images.map(createTurget));
+
+galleryEl.innerHTML = createTurget;
 
 
