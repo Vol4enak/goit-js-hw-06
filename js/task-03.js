@@ -24,8 +24,6 @@ const createTurget = images
   </li>`
   )
   .join("");
-console.log(createTurget);
-
 
 
 galleryEl.innerHTML = createTurget;
